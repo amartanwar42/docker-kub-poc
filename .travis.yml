@@ -1,12 +1,11 @@
+# @format
+
 sudo: required
 services:
-  - docker  
+  - docker
 
 before_install:
-  - docker build -t docker-kub -f Dockerfile.dev .
+  - docker build -t docker-kub -f Dockerfile .
 
 script:
-  -   docker run docker-kub npm run test -- --coverage
-  
-
-  
+  - docker run docker-kub npm run test -- --coverage
